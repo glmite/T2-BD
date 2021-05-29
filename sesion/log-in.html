@@ -1,6 +1,8 @@
 <?php include '../include/header.html'; 
 include 'valida_sesion.php';
 
+// El siguiente codigo es para que un usuario logeado no pueda ingresar aquí. Se redireccionara a index.html
+
 if(isset($_SESSION["usuario"])!=FALSE){
 	header("Status: 301 Moved Permanently");
 	header("Location: ../index.html");
@@ -8,6 +10,8 @@ if(isset($_SESSION["usuario"])!=FALSE){
 ?>
 
 
+// El siguiente codigo es el original de la plantilla. Se le agrego name=" " a cada casilla para guardar y enviar mediante post a
+// valida_login.php lo que el usuario escribe
 
 <body>
     <div class='container-fluid'>
