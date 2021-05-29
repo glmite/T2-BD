@@ -1,5 +1,9 @@
-<?php include '../include/navbar.html'; ?>
-<?php include 'profile.php'; ?>
+<?php
+//agregue la siguiente linea para abrir la base de datos
+include '../db_config.php';
+include '../include/navbar.html';
+include 'profile.php';
+include '../db_config.php'; ?>
     <div class='container-fluid'>
         <div class="row p-3">
             <h1>Mi Perfil</h1>
