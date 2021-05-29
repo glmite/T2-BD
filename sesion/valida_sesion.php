@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-//En la siguiente linea veremos si el usuario es admin o usuario
+//En las siguientes lineas veremos si el usuario es admin o no. En caso de ser admin $type_user = True
 if(isset($_SESSION["usuario"])!=FALSE){
     $query_type_user = 'SELECT Administrador FROM usuario WHERE correo = $1';
     $query_type_user  = pg_query_params($dbconn, $query_type_user, array($_SESSION["usuario"]));
