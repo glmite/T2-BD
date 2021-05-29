@@ -1,3 +1,9 @@
-<?php
-/* Este archivo debe manejar la lógica de cerrar una sesión */
+<?php include 'db_config.php';
+session_start();   
+session_destroy(); 
+header("location: ../index.html");
+exit();
+
+
+
 ?>
