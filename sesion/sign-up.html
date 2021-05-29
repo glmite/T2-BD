@@ -1,11 +1,16 @@
 <?php include '../include/header.html';
 include 'valida_sesion.php';
 
+// El siguiente codigo valida que no entre aquí un usuario logeado. Redirecciona a index.html ( creo que esto deberia ir en valida_sesion, lo intenté y me tiro error
+// trataré de ponerlo ahi) 
+
 if(isset($_SESSION["usuario"])!=FALSE){
 	header("Status: 301 Moved Permanently");
 	header("Location: ../index.html");
 }
 ?>
+
+<!-- En el body solo se agrego a cada casilla name = "" para guardar y enviar mediante post lo que el usuario escribe -->
 
 <body>
     <div class='container-fluid'>
