@@ -7,6 +7,9 @@ include 'include/navbar.html';?>
 
 <?php
 
+//El titulo de la pagina cambiará dependiendo si se inició sesión o no. Si hay un usuario loggeado entonces aparecera Hola! Nombre Apellido. Si ademas
+//el usuario es administrador aparecerá Hola! nombre apellido (admin). Si no hay usuario loggeado entonces aparecera "Monedero Crypto USM"
+
 if(isset($_SESSION["usuario"])==FALSE){
 	echo '<h1>Monedero crypto USM</h1>';
 }
