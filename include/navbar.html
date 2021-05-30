@@ -15,7 +15,7 @@ include $_SERVER['DOCUMENT_ROOT']. '/sesion/valida_sesion.php';
 }?>
 
 <!-- Solo los usuarios tienen billetera -->
-<?php if(isset($_SESSION["usuario"])!=FALSE && $type_user!=1){
+<?php if(isset($_SESSION["usuario"])!=FALSE && $type_user!='t'){
         echo '<li class="nav-item">
                 <a class="nav-link" href="/user/wallet.html">Billetera</a>
             </li>';
@@ -23,7 +23,7 @@ include $_SERVER['DOCUMENT_ROOT']. '/sesion/valida_sesion.php';
 
             <!-- Solo el admin puede revisar los usuarios -->
 
-<?php if(isset($_SESSION["usuario"])!=FALSE && $type_user==1){
+<?php if(isset($_SESSION["usuario"])!=FALSE && $type_user=='t'){
          echo '<li class="nav-item">
                 <a class="nav-link" href="/admin/users/all.html">Usuarios</a>
             </li>';
