@@ -21,7 +21,7 @@ $query_nombre = pg_fetch_assoc($query_nombre);
 $nombre_usr = $query_nombre["nombre"];
 $apellido_usr = $query_nombre["apellido"];
 
-if($type_user==True){
+if($type_user==1){
 $admin = "(Admin)";
 echo '<h1 style="color:white;">Hola! ' . $nombre_usr . " " . $apellido_usr . " ". $admin .'</h1>';}
 
