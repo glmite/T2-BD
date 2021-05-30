@@ -13,10 +13,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fecha = date("Y-m-d");
     $opciones = array('cost'=>12);
 
+// Las siguientes lineas son para obtener el id del ultimo registrado
+
+    $query_cantidad = 'SELECT ID FROM USUARIO order by ID desc LIMIT 1';    
+    $query_cantidad = pg_query_params($dbconn, $query_cantidad,array());
+    $query_cantidad = pg_fetch_assoc($query_cantidad);
+    $query_cantidad = $query_cantidad["id"];
+
+    $id = $query_cantidad +1;
+
+
     $contrasena_hasheada = password_hash($contrasena, PASSWORD_BCRYPT, $opciones);
 
-    $sql = 'INSERT INTO usuario (nombre,apellido, correo, contraseña, pais,fecha_registro) VALUES ($1, $2,$3,$4,$5,$6)';
-    if( pg_query_params($dbconn, $sql, array($nombre_usr,$apellido_usr,$email, $contrasena_hasheada,$pais_usr,$fecha)) !== FALSE ) {
+    $sql = 'INSERT INTO usuario (nombre,apellido, correo, contraseña, pais,fecha_registro, administrador, id) VALUES ($1, $2,$3,$4,$5,$6,$7,$8)';
+    if( pg_query_params($dbconn, $sql, array($nombre_usr,$apellido_usr,$email, $contrasena_hasheada,$pais_usr,$fecha,0,$id)) !== FALSE ) {
         session_start();
 	$_SESSION["usuario"] = $email;
 	header("Status: 301 Moved Permanently");
