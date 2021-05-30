@@ -1,36 +1,55 @@
-<?php 
-include $_SERVER['DOCUMENT_ROOT']. '/include/header.html';
-include $_SERVER['DOCUMENT_ROOT']. '/sesion/valida_sesion.php';
+<?php
+include $_SERVER['DOCUMENT_ROOT']. '/include/navbar.html'; ?>
+    <div class='container-fluid'>
+        <div class="row p-3">
+            <h1>Crear Usuario</h1>
+        </div>
+        <div class="row p-3">
+            <div class="col">
+                <div class="container shadow-lg rounded m-auto p-5">
+<!-- Se agregó el metodo post -->
+                    <form action="/admin/users/CRUD/create.php" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" class="form-control" placeholder="Nombre" name = "name" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="surname">Apellido</label>
+                            <input type="text" class="form-control" placeholder="Apellido" name = "surname" id="surname">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" class="form-control" placeholder="correo@electronico.com" name = "email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Contraseña</label>
+                            <input type="password" class="form-control" placeholder="Contraseña" name="pwd" id="pwd" required>
+                        </div>
+                        <!-- NOTA: Los valores están en duro para esta tarea. -->
+                        <div class="form-group">
+                            <label for="country">País</label>
+                            <select class="form-control" name = "country" id="country">
+                              <option value="1">Angola</option>
+                              <option value="2">Sudáfrica</option>
+                              <option value="3">Canadá</option>
+                              <option value="4">Estados Unidos</option>
+                              <option value="5">Chile</option>
+                              <option value="6">Australia</option>
+                              <option value="7">India</option>
+                              <option value="8">Corea del Sur</option>
+                              <option value="9">Rusia</option>
+                              <option value="10">Suiza</option>
+                            </select>
+                          </div>
+                        <div class='d-flex justify-content-end'>
+                            <a class="btn btn-secondary mx-3" href="/admin/users/all.html">Volver</a>
+                            <button type="submit" class="btn btn-primary">Crear Usuario</button>
+                        </div>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre_usr = $_POST["name"];
-    $apellido_usr = $_POST["surname"];
-    $pais_usr = $_POST["country"];
-    $email = $_POST["email"];
-    $contrasena = $_POST["pwd"];
-    $fecha = date("Y-m-d");
-    $opciones = array('cost'=>12);
-
-// Las siguientes lineas son para obtener el id del ultimo registrado
-
-    $query_cantidad = 'SELECT ID FROM USUARIO order by ID desc LIMIT 1';    
-    $query_cantidad = pg_query_params($dbconn, $query_cantidad,array());
-    $query_cantidad = pg_fetch_assoc($query_cantidad);
-    $query_cantidad = $query_cantidad["id"];
-
-    $id = $query_cantidad +1;
-
-
-    $contrasena_hasheada = password_hash($contrasena, PASSWORD_BCRYPT, $opciones);
-
-    $sql = 'INSERT INTO usuario (nombre,apellido, correo, contraseña, pais,fecha_registro, administrador, id) VALUES ($1, $2,$3,$4,$5,$6,$7,$8)';
-    if( pg_query_params($dbconn, $sql, array($nombre_usr,$apellido_usr,$email, $contrasena_hasheada,$pais_usr,$fecha,0,$id)) !== FALSE ) {
-        pg_close($dbconn);
-	echo "Usuario agregado con exito";
-    } else {
-        echo "El usuario no se pudo crear";
-        pg_close($dbconn);
-    }
-
-}
-?>
+</html>
