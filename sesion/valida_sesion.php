@@ -1,4 +1,5 @@
 <?php 
+include $_SERVER['DOCUMENT_ROOT']. '/db_config.php';
 session_start();
 
 //En las siguientes lineas veremos si el usuario es admin o no. En caso de ser admin $type_user = True
