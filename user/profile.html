@@ -3,7 +3,7 @@
 include '../db_config.php';
 include '../include/navbar.html';
 include 'profile.php';
-include '../db_config.php'; ?>
+?>
     <div class='container-fluid'>
         <div class="row p-3">
             <h1>Mi Perfil</h1>
@@ -12,14 +12,13 @@ include '../db_config.php'; ?>
             <div class="col">
                 <!-- Mostrar aquí los datos del usuario de la sesión -->
                 <div class="container shadow-lg rounded m-auto p-5">
-                    <p>Nombre Completo: </p>
-                    <p>Correo: </p>
-                    <p>País: </p>
-                    <p>Fecha de Ingreso:</p>
+                    <p>Nombre Completo: <?php echo $row["nombre"] ?>  <?php echo $row["apellido"] ?></p>
+                    <p>Correo: <?php echo $row["correo"] ?> </p>
+                    <p>País: <?php echo $row["pais"] ?> </p>
+                    <p>Fecha de Ingreso: <?php echo $row["fecha_registro"] ?></p>
                 </div>
             </div>
         </div>
     </div>
 </body>
-
 </html>
