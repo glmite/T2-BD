@@ -17,7 +17,7 @@ pais JOIN usuario
  ';
 
 $result = pg_query_params($dbconn, $query, array($id));
-print($result);
+
 if( $result !== FALSE ) {
     pg_close($dbconn);
     $info_usuario = pg_fetch_assoc($result);
