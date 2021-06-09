@@ -12,8 +12,8 @@ Ver tema bases de datos
 ## Supuestos:
 * Se creó un usuario administrador de correo admin@sansano.usm.cl y contraseña 1234 para el testeo. 
 * Las contraseñas fueron hasheadas mediante password_hash de php con un costo mayor o igual a 12
-* Se agregó en log-in.html un codigo php que valida que un usuario loggeado no pueda ingresar a la pagina. Redirecciona a la pagina principal.
-* Se agregó en sign-up.html un codigo php que no permite ingresar a la pagina al estar loggeado. Redirecciona a la pagina principal.
+* Se agregó en log-in.html y un codigo php que valida que un usuario loggeado no pueda ingresar a la pagina. Redirecciona a la pagina principal.
+* Se agregó en sign-up.html y un codigo php que no permite ingresar a la pagina al estar loggeado. Redirecciona a la pagina principal.
 * Se modificó index.html para poner un banner con css. Tambien se modifico el titulo principal dependiendo de si se está loggeado o no.
 * En caso de estár loggeado la pagina cambia el titulo a "Hola! Nombre Apellido". En caso de ser administrador el titulo es "Hola! Nombre Apellido (Admin)". 
 * Se agregó en navbar distintos codigos para condicionar los opciones disponibles para el estado del usuario.
