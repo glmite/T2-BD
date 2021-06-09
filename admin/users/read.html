@@ -10,17 +10,27 @@ include '../../include/navbar.html'; ?>
             <div class="col">
                 <div class="container shadow-lg rounded m-auto p-5">
                         <!-- Aquí debe aparecer toda la información relevante del usuario -->
-                        <p>ID: </p>
-                        <p>Nombre: </p>
-                        <p>Apellido: </p>
-                        <p>Correo: </p>
-                        <p>País: </p>
-                        <p>Fecha de Ingreso: </p>
+                        <?php
+                        echo ' 
+                         <p>ID: ' . $info_usuario["id"] .'  </p> 
+                        <p>Nombre: ' . $info_usuario["usuario"] . '</p>
+                        <p>Apellido: ' .$info_usuario["apellido"] . '</p>
+                        <p>Correo: ' . $info_usuario["correo"]. '</p>
+                        <p>País: ' . $info_usuario["pais"] . '</p>
+                        <p>Fecha de Ingreso: ' . $info_usuario["fecha_registro"] . '</p> 
+                        '
+                        ?>
+
+
                         <div class='d-flex justify-content-end'>
                             <a href="/admin/users/all.html" class="btn btn-secondary">Volver</a>
                             <!-- Estos links deberían tener el ID asociado -->
-                            <a href="/admin/users/update.html?id=0" class="btn btn-warning mx-3">Editar <i class="fas fa-edit"></i></a>
-                            <a href="/admin/users/CRUD/delete.php?id=0" class="btn btn-danger">Borrar <i class="fas fa-trash-alt"></i></a></td>
+                            <?php
+                            echo ' 
+                            <a href="/admin/users/update.html?id=' . $id .  '" class="btn btn-warning mx-3">Editar <i class="fas fa-edit"></i></a>
+                            <a href="/admin/users/CRUD/delete.php?id=' . $id . '" class="btn btn-danger">Borrar <i class="fas fa-trash-alt"></i></a></td>
+                            '
+                            ?>                    
                         </div>
                 </div>
             </div>
