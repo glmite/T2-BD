@@ -1,6 +1,12 @@
 <?php 
 include '../db_config.php';
 
+if(isset($_SESSION["usuario"])==FALSE){
+    header("Status: 301 Moved Permanently");
+    header("Location: ../index.html");
+}
+
+else{
 //obtiene el correo de la sesión
 $email=$_SESSION["usuario"];
 
@@ -16,4 +22,7 @@ if( pg_num_rows($result) > 0 ) {
     echo "Hubo un error al solicitar los datos";
     pg_close($dbconn);
 }
+
+}
+
 ?>
