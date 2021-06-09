@@ -10,6 +10,7 @@ Ver tema bases de datos
 * Amanda Salinas Pinto - 201810013-7
 
 ## Supuestos:
+* En la tabla usuarios se modifico la primary key. Se puso como primary key la columna correo. Ademas se agregó la columna administrador la cual guarda true en caso de ser administrador y false en caso contrario.  
 * Se creó un usuario administrador de correo admin@sansano.usm.cl y contraseña 1234 para el testeo. 
 * Las contraseñas fueron hasheadas mediante password_hash de php con un costo mayor o igual a 12
 * Se agregó en log-in.html y un codigo php que valida que un usuario loggeado no pueda ingresar a la pagina. Redirecciona a la pagina principal.
