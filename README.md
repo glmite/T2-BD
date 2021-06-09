@@ -46,7 +46,11 @@ desarrollo, etc
 * Francisco Nilsson Berrios - 201810015-3 
 * Amanda Salinas Pinto - 201810013-7 
 
-Análisis del Enunciado, Modificaciones y ajustes al Modelo,
-Diseño de plataforma, Desarrollo de Plataforma, Pruebas Finales.
+| Integrantes       | Análisis del Enunciado  | Modificaciones y ajustes al Modelo  | Diseño de Plataforma | Desarrollo de Plataforma | Pruebas Finales|
+| :---:             | :-:                     | :-:                                 | :-:                  | :-:                      | :-:            |
+| Bastian Araya     |                         | 283                                 |1                     |1                         |1               |
+| Amanda Salinas    | 301                     | 283                                 |1                     |1                         |1               |
+| Roberto Gonzalez  | 301                     | 283                                 |1                     |1                         |1               |
+| Francisco Nilsson | 301                     | 283                                 |1                     |1                         |1               |
 
 
