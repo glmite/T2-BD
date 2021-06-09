@@ -8,6 +8,18 @@ if(isset($_SESSION["usuario"])!=FALSE){
     $query_type_user  = pg_query_params($dbconn, $query_type_user, array($_SESSION["usuario"]));
     $query_type_user  = pg_fetch_assoc($query_type_user);
     $type_user = $query_type_user["administrador"];
+
+        if(preg_match_all("/admin/",$_SERVER['REQUEST_URI']) !=0) {
+                if($type_user=='f') {
+                    header( "Location: /");
+                }
+            }elseif(preg_match_all("#user/wallet#",$_SERVER['REQUEST_URI']) !=0) {
+                if($type_user=='t') {
+                    header( "Location: /");
+                }
+            }
+        }elseif($_SERVER['REQUEST_URI'] != "/sesion/log-in.html" && $_SERVER['REQUEST_URI'] != "/sesion/sign-up.html" &&$_SERVER['REQUEST_URI'] != "/" ){
+            header( "Location: /");
 }
 
 /* Este archivo debe usarse para comprobar si existe una sesión válida 
