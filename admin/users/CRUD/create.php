@@ -26,9 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = 'INSERT INTO usuario (nombre,apellido, correo, contraseña, pais,fecha_registro, administrador, id) VALUES ($1, $2,$3,$4,$5,$6,$7,$8)';
     if( pg_query_params($dbconn, $sql, array($nombre_usr,$apellido_usr,$email, $contrasena_hasheada,$pais_usr,$fecha,0,$id)) !== FALSE ) {
         pg_close($dbconn);
-	echo "Usuario agregado con exito";
+	echo "<script>alert('Usuario agregado con exito');document.location='../create.html'</script>";
     } else {
-        echo "El usuario no se pudo crear";
+        echo "<script>alert('Usuario no se pudo agregar');document.location='../create.html'</script>";
         pg_close($dbconn);
     }
 
