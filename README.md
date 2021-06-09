@@ -48,7 +48,7 @@ desarrollo, etc
 
 | Integrantes       | Análisis del Enunciado  | Modificaciones y ajustes al Modelo  | Diseño de Plataforma | Desarrollo de Plataforma | Pruebas Finales|
 | :---:             | :-:                     | :-:                                 | :-:                  | :-:                      | :-:            |
-| Bastian Araya     |3000                     | 3000                                |3000                  |72000                     |720000          |
+| Bastian Araya     |240                      | 240                                 |240                   |600                       |600             |
 | Amanda Salinas    |30                       | 30                                  |30                    |480                       |  480           |
 | Roberto Gonzalez  |30                       | 30                                  |30                    |480                       |  480           |
 | Francisco Nilsson |30                       | 30                                  |30                    |720                       |720             |
