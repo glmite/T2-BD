@@ -26,8 +26,13 @@ Ver tema bases de datos
 ## Identifcación del admin (preguntar a ayudantes)
 Modelo Usado: Se agregó la columna administrador con valores booleanos. Se cambió la clave primario al correo por facilidad. Notamos que al ingresar siempre es necesario correo. 
 
-* __Ventajas__ Es más simple reconocer al usuario con el correo. Más fácil de implementar.
-* __Desventajas__ No se realizó borrado lógico. Asigna memoria a cada usuario.
+* __Ventajas__
+    * Es más simple reconocer al usuario con el correo. Más fácil de implementar.
+    *  Las consultas se realizan de manera mas sencilla, solo se modifican tres tablas de la base de datos. 
+* __Desventajas__ 
+    * No se realizó borrado lógico. Asigna memoria a cada usuario.
+    * Valores muy grandes para una primary key. Es mas costoso que un id. 
+    * Se guardan demasiados falses en la columna administrador. Seria mas conveniente crear una tabla nueva, pero complejiza las consultas. 
 
 ## Dificultades
 *  Familiarizarse con php.
