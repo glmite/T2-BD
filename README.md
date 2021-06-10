@@ -5,8 +5,14 @@
 * Roberto González Fuentes - 20181001-3
 * Francisco Nilsson Berrios - 201810015-3
 * Amanda Salinas Pinto - 201810013-7
-
+* 
+##Cosas por hacer:
+* Ver algo de la coincidencia de contraseñas.
+* 
+ 
 ## Supuestos:
+
+* Ver modificaciones.
 
 ## Modificaciones:
 * En la tabla usuarios se modifico la primary key. Se puso como primary key la columna correo. Ademas se agregó la columna administrador la cual guarda true en caso de ser administrador y false en caso contrario. 
@@ -34,11 +40,12 @@ Modelo Usado:  Se modificó la primary en la tabla usuarios, Se puso como primar
 * __Desventajas__: Valores muy grandes para una primary key. Es mas costoso que un id. Se guardan demasiados falses en la columna administrador, seria mas conveniente crear una tabla nueva, pero complejiza las consultas. 
 
 ## Dificultades
-*  Familiarizarse con php.
+*  Familiarizarse con php y todos los lenguajes, no estudiamos informatica.
+*  Dificultades para encontrar las funciones necesarias para el proyecto, se tomo mucho tiempo buscando en stackoverflow.
 *  Modificar la base de datos.
-
-Puede variar desde instalación de tecnologías, ajuste de modelo, proceso creativo,
-desarrollo, etc
+*  Foregn Key: Problemas con la base de datos.
+*  Un integrante tuvo dificultades en instalar los programas necesarios, especialmente cuando uno solamente trabaja con block de notas, o la instalacion de la version incorrecta.
+*  El proceso para crear la base de datos y crear la sesion del usuario fue bastante dificultosa, al tener que empezar de cero.
 
 ## Tiempo utilizado
 * Bastián Araya Tapia - 201710031-1 
