@@ -5,8 +5,9 @@
 $id = preg_replace('#/admin/users/update.html\?id=#', '', $_SERVER['REQUEST_URI']);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include $_SERVER['DOCUMENT_ROOT']. '/sesion/valida_sesion.php';
     include '../../../db_config.php';
+
+    //variables obtenidas de la query    
     $nombre_usr = $_POST["name"];
     $apellido_usr = $_POST["surname"];
     $pais_usr = $_POST["country"];
@@ -15,23 +16,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $opciones = array('cost'=>12);
     $id =$_POST["id"];
 
+    //En el caso en que no se haya ingresado contraseña, no se cambia
+    if($contrasena=="") {
+        $sql_sin_contrasena = 
+        'UPDATE usuario  
+        SET nombre=$1,apellido=$2, correo=$3, pais=$4 
+        WHERE ID =$5;';
+        if( pg_query_params($dbconn, $sql_con_contrasena, array($nombre_usr,$apellido_usr,$email,$pais_usr,$id)) !== FALSE ) {
+            pg_close($dbconn);
+        echo "Dato actualizado con exito";
+        } else {
+            echo "no se pudieron actualizar los datos";
+            pg_close($dbconn);
+        }
+    }else { 
     $contrasena_hasheada = password_hash($contrasena, PASSWORD_BCRYPT, $opciones);
-
-    $sql = 
+    $sql_con_contrasena = 
     'UPDATE usuario  
     SET nombre=$1,apellido=$2, correo=$3, contraseña=$4, pais=$5 
     WHERE ID =$6;';
-    if( pg_query_params($dbconn, $sql, array($nombre_usr,$apellido_usr,$email, $contrasena_hasheada,$pais_usr,$id)) !== FALSE ) {
+    
+    //se verifica si la query funcionó
+    if( pg_query_params($dbconn, $sql_con_contrasena, array($nombre_usr,$apellido_usr,$email, $contrasena_hasheada,$pais_usr,$id)) !== FALSE ) {
         pg_close($dbconn);
 	echo "Dato actualizado con exito";
     } else {
         echo "no se pudieron actualizar los datos";
         pg_close($dbconn);
     }
+}
+
     header( "Location: ../all.html");
 } 
 elseif($id != '') {
-
 
 $query = 
 ' SELECT usuario.nombre AS usuario
@@ -44,7 +61,6 @@ pais JOIN usuario
  WHERE id = $1
  ';
  
-// $sql = 'SELECT nombre,apellido,correo,pais,fecha_registro FROM usuario WHERE correo = $1';
 $result = pg_query_params($dbconn, $query, array($id));
 if( $result !== FALSE ) {
     pg_close($dbconn);
