@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'UPDATE usuario  
         SET nombre=$1,apellido=$2, correo=$3, pais=$4 
         WHERE ID =$5;';
-        if( pg_query_params($dbconn, $sql_con_contrasena, array($nombre_usr,$apellido_usr,$email,$pais_usr,$id)) !== FALSE ) {
+        if( pg_query_params($dbconn, $sql_sin_contrasena, array($nombre_usr,$apellido_usr,$email,$pais_usr,$id)) !== FALSE ) {
             pg_close($dbconn);
         echo "Dato actualizado con exito";
         } else {
