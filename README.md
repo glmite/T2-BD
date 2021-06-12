@@ -42,10 +42,6 @@ Modelo Usado:  Se modificó la primary en la tabla usuarios, Se puso como primar
 *  El proceso para crear la base de datos y crear la sesion del usuario fue bastante dificultosa, al tener que empezar de cero.
 
 ## Tiempo utilizado
-* Bastián Araya Tapia - 201710031-1 
-* Roberto González Fuentes - 20181001-3 
-* Francisco Nilsson Berrios - 201810015-3 
-* Amanda Salinas Pinto - 201810013-7 
 
 | Integrantes       | Análisis del Enunciado  | Modificaciones y ajustes al Modelo  | Diseño de Plataforma | Desarrollo de Plataforma | Pruebas Finales|
 | :---:             | :-:                     | :-:                                 | :-:                  | :-:                      | :-:            |
